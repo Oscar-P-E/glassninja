@@ -1,3 +1,7 @@
+# Just in case / safety
+.env
+.env*.local
+
 # Logs
 logs
 *.log
