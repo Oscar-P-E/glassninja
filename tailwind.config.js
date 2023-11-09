@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
       },
+      fontWeight: {
+        bold: "600",
+      },
     },
   },
   plugins: [],
