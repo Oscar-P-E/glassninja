@@ -4,10 +4,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["Roboto Slab", "sans-serif"],
       },
       fontWeight: {
-        bold: "600",
+        normal: 300,
+        bold: 400,
       },
     },
   },
