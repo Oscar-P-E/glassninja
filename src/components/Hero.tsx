@@ -102,7 +102,7 @@ export const Hero = () => {
           backgroundPosition: "center",
         }}
       >
-        <div className="grid grid-cols-2 gap-4 p-2 sm:p-4">
+        <div className="grid grid-cols-2 gap-6 sm:gap-10 p-2 sm:p-4">
           {/* Cards */}
           {cardContents.map((card, index) => (
             <div
