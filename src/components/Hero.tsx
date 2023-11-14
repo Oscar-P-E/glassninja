@@ -1,5 +1,7 @@
 import { MouseEvent, useState } from "react";
 import backgroundImage from "/img/pexels-window-bg.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 export const Hero = () => {
   const [activeCard, setActiveCard] = useState<number | null>(null);
@@ -49,7 +51,7 @@ export const Hero = () => {
 
           @keyframes contentFadeIn {
             from {
-              transform: scale(0.5);
+              transform: scale(0);
               opacity: 0;
             }
             to {
@@ -58,11 +60,35 @@ export const Hero = () => {
             }
           }
 
+          .card {
+            transition: transform 0.3s ease;
+          }
+
+          .card:hover {
+            transform: scale(1.05);
+          }
+
+          .expanded-card {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            background-color: rgba(255, 255, 255, 0.9);
+          }
+
           @media (min-width: 768px) {
             .expanded-card {
-              padding: 2rem;
-              background-color: rgba(255, 255, 255, 1);
+              padding: 4rem;
             }
+          }
+
+          .close-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: transparent;
+            border: none;
+            color: black;
+            font-size: 1.5rem;
+            cursor: pointer;
           }
         `}
       </style>
@@ -80,14 +106,14 @@ export const Hero = () => {
           {cardContents.map((card, index) => (
             <div
               key={index}
-              className="bg-white bg-opacity-80 aspect-square h-36 sm:h-64 p-4 flex flex-col justify-between transition duration-500 ease-in-out"
+              className="bg-white bg-opacity-80 aspect-square h-36 sm:h-64 p-4 flex flex-col justify-between card"
               onClick={(e) => handleCardClick(index, e)}
               style={{ cursor: "pointer", transformOrigin: "center center" }}
             >
               <div
                 style={{ animation: "contentFadeIn 0.5s ease-out forwards" }}
               >
-                <h1 className="text-2xl  sm:text-4xl leading-none pb-4">
+                <h1 className="text-2xl sm:text-4xl leading-none pb-4">
                   {card.title}
                 </h1>
                 <p className="text-xs sm:text-lg pb-4">{card.description}</p>
@@ -108,11 +134,18 @@ export const Hero = () => {
               }`}
               style={{
                 width: "90vw",
-                height: "90vh",
+                height: "80vh",
                 transformOrigin: `${transformOrigin.x}px ${transformOrigin.y}px`,
                 animation: "grow 0.5s ease-out forwards",
               }}
+              onClick={(e) => e.stopPropagation()} // Prevent click inside the card from closing it
             >
+              <button
+                className="close-button sm:pr-2"
+                onClick={() => setActiveCard(null)}
+              >
+                <FontAwesomeIcon icon={faTimes} />
+              </button>
               <div
                 style={{ animation: "contentFadeIn 0.5s ease-out forwards" }}
               >
@@ -122,7 +155,6 @@ export const Hero = () => {
                 <p className="text-sm sm:text-base md:text-lg pb-4">
                   {cardContents[activeCard].description}
                 </p>
-
               </div>
             </div>
           </div>
