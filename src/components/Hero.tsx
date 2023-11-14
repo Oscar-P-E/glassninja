@@ -14,11 +14,11 @@ export const Hero = () => {
     },
     {
       title: "Why Us?",
-      description: "Professional, Reliable, Insured",
+      description: "Professional, Reliable, Safe.",
     },
     {
       title: "Service Areas",
-      description: "Beerwah, Caloundra, Mooloolaba, Nambour, Maleny...",
+      description: "Beerwah, Caloundra, Mooloolaba, Maleny...",
     },
     {
       title: "Contact Us",
@@ -69,15 +69,16 @@ export const Hero = () => {
           }
 
           .expanded-card {
-            padding-top: 4rem;
-            padding-bottom: 4rem;
+            padding: 3rem;
             background-color: rgba(255, 255, 255, 0.9);
           }
-
-          @media (min-width: 768px) {
-            .expanded-card {
-              padding: 4rem;
-            }
+          .expanded-card h1 {
+            font-size: 3rem;
+            line-height: 1;
+          }
+          .expanded-card p {
+            font-size: 1.5rem;
+            line-height: 1.5;
           }
 
           .close-button {
