@@ -18,7 +18,7 @@ export const Hero = () => {
     },
     {
       title: "Service Areas",
-      description: "Beerwah, Caloundra, Mooloolaba, Maleny...",
+      description: "Beerwah, Caloundra, Maleny...",
     },
     {
       title: "Contact Us",
