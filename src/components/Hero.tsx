@@ -1,7 +1,9 @@
+// Hero.tsx
 import { MouseEvent, useState } from "react";
-import backgroundImage from "/img/pexels-window-bg.jpg";
+import backgroundImage from "/img/pexels-window-bg.jpg"; // Ensure this path is correct
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { Contact } from "./Contact"; // Import the Contact component
 
 export const Hero = () => {
   const [activeCard, setActiveCard] = useState<number | null>(null);
@@ -9,20 +11,22 @@ export const Hero = () => {
 
   const cardContents = [
     {
-      title: "Window Cleaning",
-      description: "Servicing the Sunshine Coast and beyond.",
+      title: "Get A Quote",
+      description:
+        "Get a quote now online, or schedule a time for us to visit...",
     },
     {
       title: "Why Us?",
-      description: "Professional, Reliable, Safe.",
+      description: "Professional, Reliable, Safe...",
     },
     {
-      title: "Service Areas",
-      description: "Beerwah, Caloundra, Maleny...",
+      // title: "Videos",
+      // description: "Extremely satisfying videos of glass being cleaned...",
     },
+
     {
-      title: "Contact Us",
-      description: "This is a contact form.",
+      title: "Message Us",
+      description: "Write to us anything...",
     },
   ];
 
@@ -69,16 +73,8 @@ export const Hero = () => {
           }
 
           .expanded-card {
-            padding: 3rem;
-            background-color: rgba(255, 255, 255, 0.9);
-          }
-          .expanded-card h1 {
-            font-size: 3rem;
-            line-height: 1;
-          }
-          .expanded-card p {
-            font-size: 1.5rem;
-            line-height: 1.5;
+            padding: 4rem 1rem;
+            // background-color: rgba(255, 255, 255, 0.9);
           }
 
           .close-button {
@@ -107,14 +103,14 @@ export const Hero = () => {
           {cardContents.map((card, index) => (
             <div
               key={index}
-              className="bg-white bg-opacity-80 aspect-square h-36 sm:h-64 p-4 flex flex-col justify-between card"
+              className="bg-white bg-opacity-80 aspect-square h-36 sm:h-64 px-4 py-6 sm:py-8 sm:px-6 flex flex-col justify-between card"
               onClick={(e) => handleCardClick(index, e)}
               style={{ cursor: "pointer", transformOrigin: "center center" }}
             >
               <div
                 style={{ animation: "contentFadeIn 0.5s ease-out forwards" }}
               >
-                <h1 className="text-2xl sm:text-4xl leading-none pb-4">
+                <h1 className="text-xl sm:text-4xl leading-none pb-2 sm:pb-4">
                   {card.title}
                 </h1>
                 <p className="text-xs sm:text-lg pb-4">{card.description}</p>
@@ -139,7 +135,7 @@ export const Hero = () => {
                 transformOrigin: `${transformOrigin.x}px ${transformOrigin.y}px`,
                 animation: "grow 0.5s ease-out forwards",
               }}
-              onClick={(e) => e.stopPropagation()} // Prevent click inside the card from closing it
+              onClick={(e) => e.stopPropagation()}
             >
               <button
                 className="close-button sm:pr-2"
@@ -147,16 +143,21 @@ export const Hero = () => {
               >
                 <FontAwesomeIcon icon={faTimes} />
               </button>
-              <div
-                style={{ animation: "contentFadeIn 0.5s ease-out forwards" }}
-              >
-                <h1 className="text-2xl sm:text-3xl md:text-4xl leading-none pb-4">
-                  {cardContents[activeCard].title}
-                </h1>
-                <p className="text-sm sm:text-base md:text-lg pb-4">
-                  {cardContents[activeCard].description}
-                </p>
-              </div>
+
+              {activeCard === cardContents.length - 1 ? (
+                <Contact />
+              ) : (
+                <div
+                  style={{ animation: "contentFadeIn 0.5s ease-out forwards" }}
+                >
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl leading-none pb-4">
+                    {cardContents[activeCard].title}
+                  </h1>
+                  <p className="text-sm sm:text-base md:text-lg pb-4">
+                    {cardContents[activeCard].description}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         )}

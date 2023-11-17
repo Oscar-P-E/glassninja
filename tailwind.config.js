@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Roboto Slab", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
       },
       fontWeight: {
         normal: 300,

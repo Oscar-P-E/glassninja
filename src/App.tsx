@@ -1,5 +1,7 @@
 // App.tsx
 
+// import { Contact } from "./components/Contact";
+// import { Test } from "./components/Test";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
@@ -8,15 +10,16 @@ import { Hero } from "./components/Hero";
 const App = () => {
   return (
     <>
-      <div className="flex flex-col h-screen">
-        <Header />
-        <Hero />
-        {/* <WhyUs /> */}
-        {/* <About /> */}
-        {/* <Services /> */}
-        {/* <Contact /> */}
-        <Footer />
-      </div>
+      {/* <div className="flex flex-col h-screen"> */}
+      <Header />
+      <Hero />
+      {/* <WhyUs /> */}
+      {/* <About /> */}
+      {/* <Services /> */}
+      {/* <Contact /> */}
+      {/* <Test /> */}
+      <Footer />
+      {/* </div> */}
     </>
   );
 };
