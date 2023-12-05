@@ -1,33 +1,22 @@
 // Hero.tsx
 import { MouseEvent, useState } from "react";
-import backgroundImage from "/img/pexels-window-bg.jpg"; // Ensure this path is correct
+import backgroundImage from "/img/pexels-window-bg.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import { Contact } from "./Contact"; // Import the Contact component
+import { Contact } from "./Contact";
+import { Discount } from "./Discount";
+import { Why } from "./Why";
+import { Videos } from "./Videos";
 
 export const Hero = () => {
   const [activeCard, setActiveCard] = useState<number | null>(null);
   const [transformOrigin, setTransformOrigin] = useState({ x: 0, y: 0 });
 
   const cardContents = [
-    {
-      title: "Get A Quote",
-      description:
-        "Get a quote now online, or schedule a time for us to visit...",
-    },
-    {
-      title: "Why Us?",
-      description: "Professional, Reliable, Safe...",
-    },
-    {
-      // title: "Videos",
-      // description: "Extremely satisfying videos of glass being cleaned...",
-    },
-
-    {
-      title: "Message Us",
-      description: "Write to us anything...",
-    },
+    { title: "View your Discount", description: "Enjoy 30% off..." },
+    { title: "Why Ninja?", description: "A passion for window cleaning..." },
+    { title: "Ninja in Action", description: "Extremely satisfying videos..." },
+    { title: "Message Us", description: "Write to us anything..." },
   ];
 
   const handleCardClick = (
@@ -40,43 +29,31 @@ export const Hero = () => {
     setActiveCard(activeCard === index ? null : index);
   };
 
+  const renderExpandedContent = () => {
+    switch (activeCard) {
+      case 0: return <Discount />;
+      case 1: return <Why />;
+      case 2: return <Videos />;
+      case 3: return <Contact />;
+      default: return null;
+    }
+  };
+
   return (
     <>
+      {/* Styles and Background Image */}
       <style>
         {`
-          @keyframes grow {
-            from {
-              transform: scale(0.1);
-            }
-            to {
-              transform: scale(1);
-            }
-          }
-
-          @keyframes contentFadeIn {
-            from {
-              transform: scale(0);
-              opacity: 0;
-            }
-            to {
-              transform: scale(1);
-              opacity: 1;
-            }
-          }
-
-          .card {
-            transition: transform 0.3s ease;
-          }
-
-          .card:hover {
-            transform: scale(1.05);
-          }
-
+          @keyframes grow { from { transform: scale(0.1); } to { transform: scale(1); } }
+          @keyframes contentFadeIn { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+          .card { transition: transform 0.3s ease; }
+          .card:hover { transform: scale(1.05); }
           .expanded-card {
-            padding: 4rem 1rem;
-            // background-color: rgba(255, 255, 255, 0.9);
+            padding: 1rem; // Adjust padding as needed
+            overflow-y: auto; // Enable scrolling
+            max-height: 80vh; // Adjust height as needed
+            background-color: rgba(255, 255, 255, 0.9);
           }
-
           .close-button {
             position: absolute;
             top: 1rem;
@@ -92,14 +69,10 @@ export const Hero = () => {
 
       <div
         className="flex-1 bg-black flex justify-center items-center overflow-hidden"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
+        {/* Cards Grid */}
         <div className="grid grid-cols-2 gap-6 sm:gap-10 p-2 sm:p-4">
-          {/* Cards */}
           {cardContents.map((card, index) => (
             <div
               key={index}
@@ -107,28 +80,22 @@ export const Hero = () => {
               onClick={(e) => handleCardClick(index, e)}
               style={{ cursor: "pointer", transformOrigin: "center center" }}
             >
-              <div
-                style={{ animation: "contentFadeIn 0.5s ease-out forwards" }}
-              >
-                <h1 className="text-xl sm:text-4xl leading-none pb-2 sm:pb-4">
-                  {card.title}
-                </h1>
+              <div style={{ animation: "contentFadeIn 0.5s ease-out forwards" }}>
+                <h1 className="text-xl sm:text-4xl leading-none pb-2 sm:pb-4">{card.title}</h1>
                 <p className="text-xs sm:text-lg pb-4">{card.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Overlay for Expanded Card */}
+        {/* Expanded Card Overlay */}
         {activeCard !== null && (
           <div
             className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center"
             onClick={() => setActiveCard(null)}
           >
             <div
-              className={`bg-white p-4 aspect-square ${
-                activeCard !== null ? "expanded-card" : ""
-              }`}
+              className={`bg-white p-4 aspect-square ${activeCard !== null ? "expanded-card" : ""}`}
               style={{
                 width: "90vw",
                 height: "80vh",
@@ -137,27 +104,10 @@ export const Hero = () => {
               }}
               onClick={(e) => e.stopPropagation()}
             >
-              <button
-                className="close-button sm:pr-2"
-                onClick={() => setActiveCard(null)}
-              >
+              <button className="close-button sm:pr-2" onClick={() => setActiveCard(null)}>
                 <FontAwesomeIcon icon={faTimes} />
               </button>
-
-              {activeCard === cardContents.length - 1 ? (
-                <Contact />
-              ) : (
-                <div
-                  style={{ animation: "contentFadeIn 0.5s ease-out forwards" }}
-                >
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl leading-none pb-4">
-                    {cardContents[activeCard].title}
-                  </h1>
-                  <p className="text-sm sm:text-base md:text-lg pb-4">
-                    {cardContents[activeCard].description}
-                  </p>
-                </div>
-              )}
+              {renderExpandedContent()}
             </div>
           </div>
         )}

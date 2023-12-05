@@ -9,6 +9,7 @@ export default {
       fontWeight: {
         normal: 300,
         bold: 400,
+        bolder: 600,
       },
     },
   },
