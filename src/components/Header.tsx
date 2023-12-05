@@ -27,7 +27,7 @@ export const Header = () => {
       </div>
       <a
         href="tel:0412571316"
-        className="text-md md:text-2xl lg:text-3xl text-white whitespace-nowrap mx-auto absolute right-1 top-1 md:right-10 md:top-8"
+        className="text-md md:text-2xl lg:text-3xl text-white whitespace-nowrap mx-auto absolute right-1 top-14 md:right-10 md:top-8"
       >
         <FontAwesomeIcon className="pr-2 md:pr-4" icon={faPhone} />
         0412 571 316

@@ -10,7 +10,7 @@ import { Hero } from "./components/Hero";
 const App = () => {
   return (
     <>
-      {/* <div className="flex flex-col h-screen"> */}
+      <div className="flex flex-col h-screen">
       <Header />
       <Hero />
       {/* <WhyUs /> */}
@@ -19,7 +19,7 @@ const App = () => {
       {/* <Contact /> */}
       {/* <Test /> */}
       <Footer />
-      {/* </div> */}
+      </div>
     </>
   );
 };
