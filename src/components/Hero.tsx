@@ -13,7 +13,7 @@ export const Hero = () => {
   const [transformOrigin, setTransformOrigin] = useState({ x: 0, y: 0 });
 
   const cardContents = [
-    { title: "View your Discount", description: "Enjoy 30% off..." },
+    { title: "View your Discounts", description: "Enjoy 30% off..." },
     {
       title: "Why Ninja?",
       description: '"You don\'t realise how bad it is until"...',
