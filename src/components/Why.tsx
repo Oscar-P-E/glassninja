@@ -68,6 +68,10 @@ export const Why = () => {
         over the place.
       </p>
       <p className="mb-4">
+        Glass Ninja is also fully insured for public liability, so you can rest
+        easy.
+      </p>
+      <p className="mb-4">
         Please contact us with any questions or for a quote.
       </p>
     </div>

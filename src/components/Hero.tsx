@@ -19,7 +19,10 @@ export const Hero = () => {
       description: '"You don\'t realise how bad it is until"...',
     },
     { title: "Ninja in Action", description: "Extremely satisfying videos..." },
-    { title: "Message Us", description: "Write to us anything..." },
+    {
+      title: "Message Us",
+      description: "For quotes, inquiries, feedback, suggestions, or anything!",
+    },
   ];
 
   const handleCardClick = (
