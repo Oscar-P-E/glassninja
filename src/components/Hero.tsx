@@ -21,7 +21,7 @@ export const Hero = () => {
     { title: "Ninja in Action", description: "Extremely satisfying videos..." },
     {
       title: "Message Us",
-      description: "For quotes, inquiries, feedback, suggestions, or anything!",
+      description: "For quotes, inquiries, feedback, or anything!",
     },
   ];
 
