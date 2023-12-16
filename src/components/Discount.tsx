@@ -1,19 +1,18 @@
 export const Discount = () => {
   return (
     <div
-      className="p-4 bg-white text-black rounded-lg overflow-y-auto"
+      className="p-4 bg-white text-black rounded-lg overflow-y-auto max-w-3xl mx-auto text-lg"
       style={{ maxHeight: "calc(80vh - 2rem)" }}
     >
-      <h2 className="text-2xl font-bold mb-4">
-        Grand Opening Discount – Enjoy 30% off your first clean!
-      </h2>
+      <h2 className="text-2xl font-bolder mb-4">First Clean Discount</h2>
       <p className="mb-4">
-        You'll get a fast quote that's as transparent as your windows will be.
-        Then, we'll slice it down before your very eyes. Then, we'll clean your
-        glass so good you'll want the ninja back the next time.
+        Enjoy 20% off your first clean! You'll get a fast quote that's as
+        transparent as your windows will be. Then, we'll slice it down before
+        your very eyes. Then, we'll clean your glass so good you'll want the
+        ninja back the next time.
       </p>
 
-      <h3 className="text-xl font-semibold mb-2">Regular Booking Discount</h3>
+      {/* <h3 className="text-xl font-semibold mb-2">Regular Booking Discount</h3>
       <p className="mb-4">
         Continue booking the Ninja, and you'll continue to get even more
         discounts.
@@ -41,9 +40,9 @@ export const Discount = () => {
             <td className="border border-black p-2">20% discount</td>
           </tr>
         </tbody>
-      </table>
+      </table> */}
 
-      <h3 className="text-xl font-semibold mb-2">Referral Discount</h3>
+      <h2 className="text-2xl font-bolder mb-4">Referral Discount</h2>
       <p className="mb-4">
         Stack even more discounts when you spread the word!
       </p>
