@@ -118,7 +118,11 @@ export const Contact = () => {
               address and request a quote.
             </p>
           </div>
-          <form ref={form} onSubmit={sendEmail} className="space-y-4">
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="space-y-0 lg:space-y-8"
+          >
             <div style={fieldStyle(stage === 1)}>
               <textarea
                 name="message"

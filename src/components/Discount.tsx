@@ -1,10 +1,13 @@
 export const Discount = () => {
   return (
     <div
-      className="p-4 bg-white text-black rounded-lg overflow-y-auto max-w-3xl mx-auto text-lg"
-      style={{ maxHeight: "calc(80vh - 2rem)" }}
+      className="max-w-3xl mx-auto text-xl"
+      // style={{ maxHeight: "calc(80vh - 2rem)" }}
     >
-      <h2 className="text-2xl font-bolder mb-4">First Clean Discount</h2>
+      <h2 className="text-5xl font-bolder mb-12 border-b-4 border-black border-opacity-20">
+        First Clean Discount:{" "}
+        <span className="whitespace-nowrap">20% Off!</span>
+      </h2>
       <p className="mb-4">
         Enjoy 20% off your first clean! You'll get a fast quote that's as
         transparent as your windows will be. Then, we'll slice it down before

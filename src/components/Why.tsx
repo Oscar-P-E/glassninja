@@ -1,10 +1,9 @@
 export const Why = () => {
   return (
-    <div
-      className="p-4 bg-white text-black rounded-lg overflow-y-auto"
-      style={{ maxHeight: "calc(80vh - 2rem)" }}
-    >
-      <h2 className="text-2xl font-bold mb-4">Why Ninja?</h2>
+    <div className="max-w-3xl mx-auto text-xl">
+      <h2 className="text-5xl font-bolder mb-12 border-b-4 border-black border-opacity-20">
+        Why Ninja?
+      </h2>
       <p className="mb-4">
         Hi, I hope you’re well. My name’s Oliver, and Glass Ninja is a new
         professional window cleaning service that I’ve opened on the Sunshine
