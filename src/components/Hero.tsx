@@ -1,6 +1,7 @@
 // Hero.tsx
 import { MouseEvent, useState } from "react";
-import backgroundImage from "/img/pexels-window-bg.jpg";
+// import backgroundImage from "/img/pexels-window-bg.jpg";
+import backgroundVideo from "/video/20231219_105919_1_1.mp4";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Contact } from "./Contact";
@@ -69,23 +70,35 @@ export const Hero = () => {
       </style>
 
       <div
-        className="flex-1 bg-black flex justify-center items-center overflow-hidden"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        className="flex-1 bg-black flex justify-center items-center overflow-hidden relative z-0"
+        // style={{
+        //   backgroundImage: `url(${backgroundImage})`,
+        //   backgroundSize: "cover",
+        //   backgroundPosition: "center",
+        // }}
       >
+        {/* Background Video */}
+        <video
+          className="absolute w-full h-full object-cover object-center z-[-1]"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src={backgroundVideo} type="video/mp4" />
+        </video>
+
         {/* Cards Grid */}
         <div className="grid grid-cols-2 gap-6 sm:gap-10 p-2 sm:p-4">
           {cardContents.map((card, index) => (
             <div
               key={index}
-              className="bg-white bg-opacity-80 aspect-square h-36 sm:h-64 px-4 py-6 sm:py-8 sm:px-6 flex flex-col justify-between card"
+              className="bg-white bg-opacity-80 aspect-square h-36 sm:h-64 px-4 py-6 sm:py-8 sm:px-6 flex flex-col justify-center text-center card"
               onClick={(e) => handleCardClick(index, e)}
               style={{ cursor: "pointer", transformOrigin: "center center" }}
             >
               <div
+                className=""
                 style={{ animation: "contentFadeIn 0.5s ease-out forwards" }}
               >
                 <h1 className="text-xl sm:text-4xl leading-none pb-2 sm:pb-4">
