@@ -79,7 +79,7 @@ export const Hero = () => {
       >
         {/* Background Video */}
         <video
-          className="absolute w-full h-full object-cover object-center z-[-1]"
+          className="absolute min-w-full h-[280%] md:w-full md:h-full object-cover object-center z-[-1]"
           autoPlay
           muted
           loop
