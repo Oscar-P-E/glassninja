@@ -10,15 +10,15 @@ import { Hero } from "./components/Hero";
 const App = () => {
   return (
     <>
-      <div className="flex flex-col h-screen">
-      <Header />
-      <Hero />
-      {/* <WhyUs /> */}
-      {/* <About /> */}
-      {/* <Services /> */}
-      {/* <Contact /> */}
-      {/* <Test /> */}
-      <Footer />
+      <div className="flex flex-col h-100svh">
+        <Header />
+        <Hero />
+        {/* <WhyUs /> */}
+        {/* <About /> */}
+        {/* <Services /> */}
+        {/* <Contact /> */}
+        {/* <Test /> */}
+        <Footer />
       </div>
     </>
   );
