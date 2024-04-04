@@ -5,15 +5,14 @@ export const Discount = () => {
       // style={{ maxHeight: "calc(80vh - 2rem)" }}
     >
       <h2 className="text-5xl font-bolder mb-12 border-b-4 border-black border-opacity-20">
-        First Clean Discount:{" "}
-        <span className="whitespace-nowrap">20% Off!</span>
+        Referral Discount
       </h2>
-      <p className="mb-4">
+      {/* <p className="mb-4">
         Enjoy 20% off your first clean! You'll get a fast quote that's as
         transparent as your windows will be. Then, we'll slice it down before
         your very eyes. Then, we'll clean your glass so good you'll want the
         ninja back the next time.
-      </p>
+      </p> */}
 
       {/* <h3 className="text-xl font-semibold mb-2">Regular Booking Discount</h3>
       <p className="mb-4">
@@ -45,10 +44,10 @@ export const Discount = () => {
         </tbody>
       </table> */}
 
-      <h2 className="text-2xl font-bolder mb-4">Referral Discount</h2>
-      <p className="mb-4">
+      {/* <h2 className="text-2xl font-bolder mb-4">Referral Discount</h2> */}
+      {/* <p className="mb-4">
         Stack even more discounts when you spread the word!
-      </p>
+      </p> */}
       <table className="w-full mb-4 border-collapse border border-black">
         <thead>
           <tr>

@@ -45,11 +45,11 @@ export const Why = () => {
         that it’s worth it to get a regular professional clean, because nothing
         else comes close to lifting up the entire place like clean glass.
       </p>
-      <p className="mb-4">
+      {/* <p className="mb-4">
         For our grand opening, 30% off your first clean is my reach out to you,
         to try us out, and to see for yourself the amazing transformation and
         mood lift that comes from perfectly clean windows.
-      </p>
+      </p> */}
       <p className="mb-4">
         Support local, and you'll get that loyal local service. Glass Ninja will
         do residential, commercial, and anything in between.
