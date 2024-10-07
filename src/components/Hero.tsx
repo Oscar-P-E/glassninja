@@ -4,8 +4,10 @@ import { MouseEvent, useState } from "react";
 import backgroundVideo from "/video/20231219_105919_1_1.mp4";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { StarIcon } from "@heroicons/react/24/solid";
+
 import { Contact } from "./Contact";
-import { Discount } from "./Discount";
+// import { Discount } from "./Discount";
 import { Why } from "./Why";
 import { Videos } from "./Videos";
 
@@ -14,10 +16,10 @@ export const Hero = () => {
   const [transformOrigin, setTransformOrigin] = useState({ x: 0, y: 0 });
 
   const cardContents = [
-    {
-      title: "View your Discount",
-      description: "Get a discount for referrals...",
-    },
+    // {
+    //   title: "See Google Reviews",
+    //   description: `<StarIcon className="h-8 w-8 text-yellow-500" />`,
+    // },
     {
       title: "Why Ninja?",
       description: '"You don\'t realise how bad it is until"...',
@@ -42,15 +44,15 @@ export const Hero = () => {
   const renderExpandedContent = () => {
     switch (activeCard) {
       case 0:
-        return <Discount />;
-      case 1:
         return <Why />;
-      case 2:
+      case 1:
         return <Videos />;
-      case 3:
+      case 2:
         return <Contact />;
+      // case 3:
       default:
         return null;
+      // return <Discount />;
     }
   };
 
@@ -93,6 +95,31 @@ export const Hero = () => {
 
         {/* Cards Grid */}
         <div className="grid grid-cols-2 gap-6 sm:gap-10 p-2 sm:p-4">
+          <a
+            href="https://maps.app.goo.gl/72KduhkyLgGTGEAd9"
+            target="new"
+            className="bg-white bg-opacity-80 aspect-square h-36 sm:h-64 px-4 py-6 sm:py-8 sm:px-6 flex flex-col justify-center text-center card"
+            style={{ cursor: "pointer", transformOrigin: "center center" }}
+          >
+            <div
+              className=""
+              style={{ animation: "contentFadeIn 0.5s ease-out forwards" }}
+            >
+              <h1 className="text-xl sm:text-4xl leading-none pb-2 sm:pb-4">
+                See Google Reviews
+              </h1>
+              <p className="text-xs sm:text-lg pb-4">
+                <span className="flex flex-row justify-evenly">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <StarIcon
+                      key={i}
+                      className="h-4 w-4 sm:h-8 sm:w-8 text-yellow-500"
+                    />
+                  ))}
+                </span>
+              </p>
+            </div>
+          </a>
           {cardContents.map((card, index) => (
             <div
               key={index}

@@ -12,7 +12,6 @@ export const Videos = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-          di
         </div>
         <div className="video-container mx-auto ">
           <iframe
